@@ -10,12 +10,12 @@ function AllRecipes() {
 
     useEffect(() => {
     const fetchRecipes = async () => {
-      const res = await axios.get("http://localhost:5000/recipe");
+      const res = await axios.get("https://recipe-app-2zlm.onrender.com/api/v1/recipe");
       setRecipes(res.data);
     };
 
     const fetchFavorites = async () => {
-      const res = await axios.get("http://localhost:5000/user/favorites", {
+      const res = await axios.get("https://recipe-app-2zlm.onrender.com/api/v1/user/favorites", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
@@ -29,7 +29,7 @@ function AllRecipes() {
 
   const toggleFavorite = async (recipeId) => {
     try {
-      const res = await axios.put(`http://localhost:5000/user/favorite/${recipeId}`, null, {
+      const res = await axios.put(`https://recipe-app-2zlm.onrender.com/api/v1/user/favorite/${recipeId}`, null, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
@@ -51,7 +51,7 @@ function AllRecipes() {
             <div className="recipe-card" key={recipe._id}>
               <img
                 className="w-100"
-                src={`http://localhost:5000/public/images/${recipe.coverImage}`}
+                src={`https://recipe-app-2zlm.onrender.com/api/v1/public/images/${recipe.coverImage}`}
                 alt={recipe.title}
               />
               <h4 className="mt-4">{recipe.title}</h4>

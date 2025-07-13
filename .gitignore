@@ -11,9 +11,9 @@ frontend/.env
 frontend/.DS_Store
 
 # === backend (Express) ===
-backend/node_modules/
-backend/.env
-backend/.DS_Store
+node_modules/
+.env
+.DS_Store
 
 # === أنظمة التشغيل ===
 *.swp
